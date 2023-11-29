@@ -20,7 +20,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: -1;
 }
 
 .tab{
@@ -56,7 +56,7 @@ body{
 
     background-size: 340px 200px;
     background-repeat: repeat;
-    z-index: -5;
+    z-index: -6;
     border-radius: 10px;
 }
 
@@ -274,7 +274,7 @@ body{
     height: 200px;
     right: -60px;
     top: 20px;
-    z-index: -1;
+    z-index: -5;
     filter: url(#inset-shadow) drop-shadow(-3px 5px 3px rgb(0 0 0 / 0.7));
 }
 
@@ -283,7 +283,7 @@ body{
     height: 200px;
     right: -30px;
     top: 80px;
-    z-index: -1;
+    z-index: -5;
     filter: url(#inset-shadow) drop-shadow(-3px 5px 3px rgb(0 0 0 / 0.7));
     
 }

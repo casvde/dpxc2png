@@ -17,9 +17,9 @@ from pathlib import Path
 eel.init("web")
 
 
-Path(os.path.abspath("../Images")).mkdir(parents=True, exist_ok=True)
+Path(os.path.abspath("./Images")).mkdir(parents=True, exist_ok=True)
 
-output_directory = (os.path.abspath("../Images"))
+output_directory = (os.path.abspath("./Images"))
 
 eel.dirName({'name': output_directory})
 selected_files = []  # Store selected file paths here
