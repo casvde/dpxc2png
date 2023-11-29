@@ -158,14 +158,14 @@ body{
     0% { transform: translate(0,0) }
     10% { transform: translate(-5%,-5%) }
     20% { transform: translate(-10%,-10%) }
-    30% { transform: translate(5%,-10%) }
+    30% { transform: translate(-5%,-10%) }
     40% { transform: translate(-5%,-15%) }
-    50% { transform: translate(-10%,5%) }
-    60% { transform: translate(15%,0) }
-    70% { transform: translate(0,10%) }
+    50% { transform: translate(-10%,-5%) }
+    60% { transform: translate(-15%,0) }
+    70% { transform: translate(0,-10%) }
     80% { transform: translate(-15%,0) }
-    90% { transform: translate(10%,2%) }
-    100% { transform: translate(5%,0) }
+    90% { transform: translate(-10%,-2%) }
+    100% { transform: translate(-5%,0) }
 }
 
 
@@ -248,7 +248,7 @@ body{
 
 .files{
     position: absolute;
-   top: 5px;
+    top: 5px;
     left: 5px;
 }
 
@@ -321,8 +321,6 @@ body{
     width: 180px;
     left: calc(50% - 56px);
     top: 220px;
-
-   
 }
 
 
@@ -386,6 +384,12 @@ body{
 
 
 .sparkclick{
+
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     overflow: hidden;
     width: 1000px;
     height: 600px;

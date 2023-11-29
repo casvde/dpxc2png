@@ -18,7 +18,6 @@ function dirName(result) {
 }
 
 
-
 eel.expose(progress);
 
 function progress(result) {
@@ -28,7 +27,6 @@ function progress(result) {
     document.getElementById('loadingbarjs').innerText = `${loadingbar}`;
 
 }
-
 
 
 function getPathToFile() {

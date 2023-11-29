@@ -97,7 +97,7 @@ def progress(count, total):
 
     eel.progress({'loadin': ('[%s]\r' % (bar))})
 
-    if bar_len == filled_len:
+    if count == total:
         time.sleep(1)
         eel.progress({'loadin':""})
 
