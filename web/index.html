@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF/DOXC to Image Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Kablammo&family=Pixelify+Sans&family=Sometype+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="pdf_.ico">
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+
+<body>
+    <div class="wrap">
+
+
+        <div class="tab">
+
+
+            
+            <div class="blacktab">
+            
+                <svg class="screenicon" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                preserveAspectRatio="xMidYMid meet">
+               
+               <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+               fill="#171717" stroke="none">
+               <path d="M735 5099 c-101 -35 -174 -102 -223 -206 l-27 -58 -2 -610 c-2 -380
+               1 -604 7 -594 5 8 36 89 70 180 80 214 128 303 207 388 77 84 133 127 231 175
+               126 64 198 77 451 83 l223 6 -278 279 c-154 154 -302 295 -331 314 -98 64
+               -220 80 -328 43z"/>
+               <path d="M4170 5106 c-97 -27 -123 -48 -423 -345 l-298 -296 218 -6 c233 -7
+               303 -18 415 -65 152 -64 302 -200 376 -341 22 -43 68 -152 102 -243 34 -91 66
+               -174 71 -185 4 -11 7 246 6 595 l-2 615 -27 57 c-36 77 -73 122 -133 162 -91
+               61 -203 80 -305 52z"/>
+               <path d="M1265 4149 c-107 -18 -215 -77 -281 -153 -20 -22 -51 -72 -70 -111
+               -30 -63 -870 -2292 -881 -2340 -3 -11 237 221 533 516 297 295 560 551 587
+               568 131 88 275 131 442 131 140 0 235 -23 365 -86 79 -39 109 -62 186 -138
+               145 -144 215 -289 237 -487 19 -172 -26 -357 -125 -511 -27 -42 -182 -205
+               -466 -490 -234 -235 -424 -429 -421 -432 2 -2 263 -142 579 -310 420 -224 583
+               -306 607 -306 19 0 64 15 101 34 86 43 1086 577 1092 582 2 3 -188 197 -422
+               432 -286 286 -439 448 -466 490 -106 166 -151 368 -121 552 40 250 200 473
+               420 583 127 64 223 87 364 87 167 0 311 -43 442 -131 27 -17 290 -273 587
+               -568 296 -295 536 -527 533 -516 -11 48 -851 2277 -881 2340 -58 121 -152 205
+               -280 249 -61 21 -69 21 -1336 22 -701 1 -1297 -2 -1325 -7z m1536 -3072 c92
+               -61 90 -181 -4 -251 -27 -20 -41 -21 -237 -21 -196 0 -210 1 -237 21 -94 70
+               -96 190 -4 251 33 22 42 23 241 23 199 0 208 -1 241 -23z"/>
+               <path d="M1448 2441 c-31 -10 -79 -31 -105 -46 -55 -32 -1167 -1135 -1155
+               -1146 11 -11 891 -479 900 -479 4 0 211 204 458 453 414 415 454 458 486 524
+               141 284 -6 619 -307 699 -72 20 -208 17 -277 -5z m248 -361 c65 -64 64 -154
+               -2 -216 -46 -44 -98 -52 -158 -25 -109 48 -117 197 -14 262 52 32 128 22 174
+               -21z"/>
+               <path d="M3410 2453 c-14 -3 -56 -20 -95 -37 -252 -118 -353 -415 -227 -669
+               32 -66 72 -109 486 -524 247 -249 454 -453 459 -453 8 0 727 380 856 453 l53
+               30 -543 544 c-313 312 -569 561 -603 583 -82 56 -168 80 -275 79 -47 -1 -97
+               -4 -111 -6z m188 -353 c69 -43 94 -139 52 -208 -28 -45 -97 -76 -151 -67 -103
+               18 -159 155 -96 236 43 56 136 75 195 39z"/>
+               </g>
+               </svg>
+
+
+                <svg style="position: absolute;">
+                    <defs>
+                        <filter id='inset-shadow'>
+                            <!-- Shadow offset -->
+                            <feOffset
+                                    dx='2'
+                                    dy='5'
+                                  />
+                            <!-- Shadow blur -->
+                          <feGaussianBlur
+                                    stdDeviation='1'
+                                    result='offset-blur'
+                                  />
+                            <!-- Invert drop shadow to make an inset shadow-->
+                            <feComposite
+                                    operator='out'
+                                    in='SourceGraphic'
+                                    in2='offset-blur'
+                                    result='inverse'
+                                  />
+                            <!-- Cut colour inside shadow -->
+                            <feFlood
+                                    flood-color='black'
+                                    flood-opacity='.8'
+                                    result='color'
+                                  />
+                            <feComposite
+                                    operator='in'
+                                    in='color'
+                                    in2='inverse'
+                                    result='shadow'
+                                  />
+                            <!-- Placing shadow over element -->
+                            <feComposite
+                                    operator='atop'
+                                    in='shadow'
+                                    in2='SourceGraphic'
+                                  /> 
+                          </filter>
+                          
+                      </defs>
+                </svg>
+
+
+                <svg class="cable" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -13 6.753 14.43">
+                   
+                    <path d="M 0 0 C 9 3 3 -10.5 0 -12" stroke="#FF1121" stroke-width="0.3" fill="none"/>
+                </svg>
+
+                <svg class="cable1" xmlns="http://www.w3.org/2000/svg" viewBox="-0.3 -24.3 6.231 24.6">
+                    <path d="M 0 0 C 7 -4 8 -19 0 -24" stroke="#FF0000" stroke-width="0.55" fill="none"/>
+                </svg>
+
+
+                <div class="sparkclick"></div>
+
+
+                <p id="loadingbarjs" class=" glowingtext loadingbar"></p>
+     
+                <div class="mouth1"></div>
+                <div class="mouth2"></div>
+                <div class="mouth3"></div>
+
+                <div class="bolt top left"></div>
+                <div class="bolt top right"></div>
+                <div class="bolt bottom left"></div>
+                <div class="bolt bottom right"></div>
+
+                <div class="screen">
+
+
+                    
+                    <div class="noise"></div>
+
+                    <div class="text">
+                        
+                        <div class="files">
+                            <button class="glowingtextbutton" type="button" onclick="getPathToFile()">- Select Files -</button>
+                            <p class="glowingtext">Number of selected Files: <span id="fileCount" >0</span></p>
+                        </div>
+
+                        <div class="path">
+                            <button class="glowingtextbutton" type="button" onclick="selectDirectory()">- Select Location -</button>
+                            <p id="dirName" class="glowingtext">F:\Persoonlijke mappen\--- --- --- --- ---\Images</p>
+                        </div>
+
+
+                        <button class="convert glowingtextbutton"type="button" onclick="convert_selected_files()">&lt;&lt;- CONVERT -&gt;&gt;</button>
+
+                        <p class="version glowingtext">V1.0.1</p>
+                    </div>
+                </div>
+            </div>
+
+    
+
+        </div>
+     </div>
+
+<script type="text/javascript" src="jquery-364min.js"></script>
+<script>
+    // click event listener
+    $('.sparkclick').on('click', function(e) {
+      explode(e.pageX, e.pageY);
+    })
+    
+    // explosion construction
+    function explode(x, y) {
+      var particles = 15,
+        // explosion container and its reference to be able to delete it on animation end
+        explosion = $('<div class="explosion"></div>');
+    
+      // put the explosion container into the body to be able to get it's size
+      $('body').append(explosion);
+    
+      // position the container to be centered on click
+      explosion.css('left', x - explosion.width() / 2);
+      explosion.css('top', y - explosion.height() / 2);
+    
+      for (var i = 0; i < particles; i++) {
+        // positioning x,y of the particle on the circle (little randomized radius)
+        var x = (explosion.width() / 2) + rand(70, 150) * Math.cos(2 * Math.PI * i / rand(particles - 10, particles + 10)),
+          y = (explosion.height() / 2) + rand(70, 150) * Math.sin(2 * Math.PI * i / rand(particles - 10, particles + 10)),
+
+          size = rand(1,10)
+          color = rand(250, 255) + ', ' + rand(22, 36) + ', ' + rand(0, 16), // randomize the color rgb
+            // particle element creation (could be anything other than div)
+          elm = $('<div class="particle" style="' +
+            'background-color: rgb(' + color + ') ;' +
+            'box-shadow: 0px 0px 4px 1px rgb(' + color + '),0px 0px 18px 3px rgba(255,240,0,0.3),0px 0px 12px 3px rgba(255, 34, 0, 0.5), 0px 0px 4px 2px rgb(255, 235, 163) ;' +
+            'filter: blur(1px);' +
+            'width: '+size+'px;' +
+            'height:'+size+'px;' +
+            'border-radius: 50%;' +
+            'top: ' + y + 'px; ' +
+            'left: ' + x + 'px"></div>');
+    
+        if (i == 0) { // no need to add the listener on all generated elements
+          // css3 animation end detection
+          elm.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+            explosion.remove(); 
+          });
+        }
+        explosion.append(elm);
+      }
+    }
+    
+
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max + 1)) + min;
+    }
+</script>
+
+</body>
+
+</html>
