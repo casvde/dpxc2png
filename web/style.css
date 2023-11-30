@@ -61,9 +61,6 @@ body{
 }
 
 
-
-
-
 .blacktab{
     position: relative;
 
@@ -89,7 +86,7 @@ body{
     content:"";
     position: absolute;
     inset: 0px;
-    transform: translate3d(0px,14px,-1px);
+    transform: translate3d(0px,12px,-1px);
     background: linear-gradient(181deg, rgb(105, 105, 105) 94%, rgb(27, 27, 27) 100%);
     border-radius: inherit;
     z-index: -4;
@@ -127,11 +124,8 @@ body{
 
     box-shadow:
     0px 0px 5px rgba(215, 215, 215, 0.157),
-
     0px 2px 0px rgb(60, 60, 60) inset,
-    
     0px 2px 5px 4px rgba(0, 0, 0, 0.406) inset,
-
     -1px 1px 0px 0px rgb(90, 90, 90) inset,
     1px 1px 0px 0px rgb(118, 118, 118) inset;
 
@@ -220,7 +214,6 @@ body{
 }
 
 .glowingtext, .glowingtextbutton{
-
     font-family:'Pixelify Sans', serif ;
     font-size: 12px;
     border: 0px;
@@ -230,7 +223,6 @@ body{
 
     width: auto;
     line-height: 15px;
-
 
     text-shadow: 
        0px 0px 1px#d19615,
@@ -263,13 +255,23 @@ body{
     bottom: 5px;
     left: 5px;
 }
+
+.cpu{
+    position: absolute;
+    top: 8px;
+    left: 460px;
+}
+
+
+
+
 .version{
     position: absolute;
     bottom: 3px;
     right: 10px;
 }
-.cable{
 
+.cable{
     position: absolute;
     height: 200px;
     right: -60px;
@@ -285,9 +287,7 @@ body{
     top: 80px;
     z-index: -5;
     filter: url(#inset-shadow) drop-shadow(-3px 5px 3px rgb(0 0 0 / 0.7));
-    
 }
-
 
 
 .mouth1 ,.mouth2 , .mouth3{
@@ -336,14 +336,14 @@ body{
     height: 2px;
     position: absolute;
      pointer-events: none;
-     animation: fade 3s ease-in reverse forwards;
+     animation: fade 1.4s ease-in reverse forwards;
      z-index: 10;
 }
 .explosion .particle {
     
     z-index: 10;
-  position: absolute;
-  animation: pop 0.8s ease-in reverse forwards;
+    position: absolute;
+    animation: pop 0.8s ease-in reverse forwards;
 }
 
 @keyframes pop {
@@ -353,12 +353,11 @@ body{
     scale: 0;
   }
   to {
-    background: rgb(255, 235, 163);
+    background: rgb(255, 244, 204);
     top: 50%;
     left: 50%;
     opacity: 1;
     scale: 0.5;
-
   }
 }
 
@@ -366,7 +365,7 @@ body{
   from {
     box-shadow:
     0px 0px 0px 0px rgba(255, 255, 255, 1), 
-    0px 0px 0px 0px rgb(255, 111, 0);
+    0px 0px 0px 0px rgb(255, 0, 0);
     opacity: 0;
     scale: 0;
   }
@@ -375,16 +374,11 @@ body{
     0px 0px 60px 9px rgba(255, 255, 255, 1), 
     0px 0px 50px 9px rgb(255, 111, 0);
     opacity: 1;
-    scale: 1.4;
-
-
+    scale: 1;
   }
 }
 
-
-
 .sparkclick{
-
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;

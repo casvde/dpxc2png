@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF/DOXC to Image Converter</title>
+    <title>PDF to Image Converter</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Kablammo&family=Pixelify+Sans&family=Sometype+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="pdf_.ico">
@@ -136,19 +136,31 @@
                     <div class="text">
                         
                         <div class="files">
-                            <button class="glowingtextbutton" type="button" onclick="getPathToFile()">- Select Files -</button>
+                            <button class="glowingtextbutton" type="button" onclick="get_path_to_file()">- Select Files -</button>
                             <p class="glowingtext">Number of selected Files: <span id="fileCount" >0</span></p>
                         </div>
 
                         <div class="path">
                             <button class="glowingtextbutton" type="button" onclick="selectDirectory()">- Select Location -</button>
-                            <p id="dirName" class="glowingtext">F:\Persoonlijke mappen\--- --- --- --- ---\Images</p>
+                            <p id="dirName" class="glowingtext">F:\Something went wrong\--- --- --- --- ---\Path not updating/found</p>
                         </div>
-
 
                         <button class="convert glowingtextbutton"type="button" onclick="convert_selected_files()">&lt;&lt;- CONVERT -&gt;&gt;</button>
 
-                        <p class="version glowingtext">V1.0.1</p>
+                        <p class="version glowingtext">V1.0.3</p>
+
+                        <table class="glowingtext cpu">
+                          <tr>
+                            <td>CPU Usage:</td>
+                            <td id="cpu"> NaN </td>
+                            <td>%</td>
+                          </tr>
+                          <tr>
+                            <td>RAM Usage:</td>
+                            <td id="ram"> NaN </td>
+                            <td>%</td>
+                          </tr>
+                        </table>
                     </div>
                 </div>
             </div>
