@@ -1,5 +1,5 @@
 
-
+eel.expose(updateFileCount);
 function updateFileCount(result) {
     const fileCount = result.count;
 
@@ -32,7 +32,7 @@ function progress(result) {
 
 
 
-function get_path_to_file() {
+function getPathToFile() {
     eel.pythonFunction();
 };
 
