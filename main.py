@@ -1,7 +1,8 @@
 import sys, io
 
-#buffer = io.StringIO()
-#sys.stdout = sys.stderr = buffer
+buffer = io.StringIO()
+sys.stdout = sys.stderr = buffer
+
 import os
 import eel
 import wx
@@ -10,6 +11,9 @@ import time
 import psutil
 from pathlib import Path
 
+from docx2pdf import convert
+
+import shutil
 
 eel.init("web")
 
@@ -18,7 +22,6 @@ output_directory = (os.path.abspath("./Images"))
 
 eel.dirName({'name': output_directory})
 selected_files = []  # Store selected file paths here
-
 
 @eel.expose
 def select_directory():
@@ -34,10 +37,11 @@ def select_directory():
 
         return output_directory
 
+
 @eel.expose
 def pythonFunction():
     app = wx.App(None)
-    wildcard = "Document files|*.pdf;"
+    wildcard = "Document files (*.pdf;*.docx)|*.pdf;*.docx"
     style = wx.FD_OPEN | wx.STAY_ON_TOP | wx.FD_FILE_MUST_EXIST | wx.FD_MULTIPLE  
     dialog = wx.FileDialog(None, "PDF to Image Converter", wildcard=wildcard, style=style)
 
@@ -52,22 +56,67 @@ def pythonFunction():
     eel.updateFileCount({'count': len(selected_files)})
     return selected_files
 
+
 @eel.expose
 def convert_selected_files():
     global selected_files
+    temp_folder = "temp"
+
+    if not os.path.exists(temp_folder):
+        os.makedirs(temp_folder)
+
+    pdf_files = []
+
     total_files = len(selected_files)
 
     for index, path in enumerate(selected_files):
         try:
-            convert_image(path)
-            progress(index + 1, total_files)
+            file_extension = os.path.splitext(path)[1].lower()
+
+            if file_extension == ".pdf":
+                pdf_files.append(path)
+
+            elif file_extension == ".docx":
+                temp_file_path = os.path.join(temp_folder, os.path.basename(path))
+                shutil.copy2(path, temp_file_path)
+            else:
+                print(f"Unsupported file type: {path}")
+
         except Exception as e:
             print(f"Error processing file {path}: {str(e)}")
 
-@eel.expose
-def convert_image(pdf_path):
-    path_split = os.path.split(pdf_path)
+    convert(temp_folder)
+    pdf_files.extend(get_all_pdf_files(temp_folder))
+    move_pdfs_to_original_folder(pdf_files)
 
+
+def get_all_pdf_files(folder):
+    # Get a list of all PDF files in the specified folder
+    pdf_files = [f for f in os.listdir(folder) if f.lower().endswith(".pdf")]
+    return [os.path.join(folder, pdf_file) for pdf_file in pdf_files]
+
+
+def move_pdfs_to_original_folder(pdf_files):
+    total_files = len(pdf_files)
+
+    for index, pdf_path in enumerate(pdf_files, start=1):
+        original_folder = os.path.dirname(pdf_path)
+        destination_path = os.path.join(original_folder, os.path.basename(pdf_path))
+        shutil.move(pdf_path, destination_path)
+
+        progress(index, total_files)  
+
+        update_file_path_for_image(destination_path)
+
+    print("Moved and updated paths for PDF files")
+    try:
+        shutil.rmtree('temp')
+    except Exception as e:
+        print(f'Failed to delete directory: {e}')
+
+
+@eel.expose
+def update_file_path_for_image(pdf_path):
     try:
         pdf_document = fitz.open(pdf_path)
 
@@ -89,18 +138,18 @@ def sys_usage():
 
     return (cpu_usage , ram_usage)
 
+
 @eel.expose
 def progress(count, total):
     cpu_usage, ram_usage = sys_usage()
-
 
     bar_len = 6
     filled_len = int(round(bar_len * count / float(total)))
     bar = '◼' * filled_len + '◻' * (bar_len - filled_len)
 
-    eel.progress({'loadin': ('[%s]\r' % (bar)),  'cpu':(f"{cpu_usage}"),  'ram': f"{ram_usage}"})
+    eel.progress({'loadin': ('[%s]\r' % (bar)), 'cpu': f"{cpu_usage}", 'ram': f"{ram_usage}"})
     if count == total:
         time.sleep(3)
-        eel.progress({'loadin':"",  'cpu':" NaN ",  'ram':" NaN "  })
+        eel.progress({'loadin': "", 'cpu': " NaN ", 'ram': " NaN "})
 
 eel.start("index.html", size=(1200, 750), port=8000)
