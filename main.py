@@ -1,7 +1,7 @@
 import sys, io
 
 buffer = io.StringIO()
-sys.stdout = sys.stderr = buffer
+sys.stdout = sys.stderr = buffer # Required so project can be exported with no-console and eel
 
 import os
 import eel
