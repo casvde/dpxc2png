@@ -3,7 +3,7 @@
 A simple doxc/pdf to image converter using: 
 
 - Python  # Used for logic 
-- Js      # Communcation between Front-end and Back-end / And Front-end
+- Js      # Communcation between Front-end and Back-end
 - HTML    # Front-end
 - Css     # Front-end
 
